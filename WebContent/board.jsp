@@ -1,4 +1,9 @@
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	request.setCharacterEncoding("utf-8");
+%>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -86,7 +91,7 @@ body{
 <form class="form-style-9" method="post">
 <ul>
 <li>
-    <input type="text" name="name" class="field-style field-split align-left" placeholder="Name" value='<%=request.getParameter("name") %>'/>
+    <input type="text" name="name" class="field-style field-split align-left" placeholder="작성자" value='<%=request.getParameter("name") %>'/>
     <input type="email" name="email" class="field-style field-split align-right" placeholder="Email" />
 
 </li>
@@ -98,13 +103,12 @@ body{
 <input type="text" name="birthday" class="field-style field-full align-none" placeholder=birthday />
 </li>
 <li>
-<textarea name="Message" class="field-style" placeholder="Message"></textarea>
+<textarea name="Message" class="field-style" placeholder="내용"><%=request.getParameter("Message") %></textarea>
 </li>
 <li>
-<input type="submit" value="Send Message" />
+<input type="submit" value="작성" />
 </li>
 </ul>
 </form>
-
 </body>
 </html>
