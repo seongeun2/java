@@ -5,6 +5,12 @@
 <title>Form Style 1</title>
 
 <style type="text/css">
+
+div{
+	width: 500px;
+	border: solid 1px;
+	background-color: #e2dede;
+}
 .form-style-1 {
 	margin:10px auto;
 	max-width: 400px;
@@ -73,7 +79,7 @@ select{
 .form-style-1 .field-textarea{
 	height: 100px;
 }
-.form-style-1 input[type=submit], .form-style-1 input[type=button]{
+.form-style-1 input[type=submit], .form-style-1 input[type=button], .form-style-1 input[type=radio]{
 	background: #4B99AD;
 	padding: 8px 15px 8px 15px;
 	border: none;
@@ -91,9 +97,27 @@ select{
 </style>
 </head>
 <body>
-<form>
+<div>
+<p align="center"><b>회원등록</b>
+<form class="all">
 <ul class="form-style-1">
-    <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input type="text" name="field2" class="field-divided" placeholder="Last" /></li>
+    <li><label>ID<span class="required"> *</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름
+     <span class="required">*</span></label><input type="text" name="field1" class="field-divided"/>&nbsp;<input type="text" name="field2" class="field-divided"/></li>
+    <li>
+        <label>ID <span class="required">*</span></label>
+        <input type="email" name="field3" class="field-long" />
+    </li>
+    <li>
+        <label>성별 <span class="required">*</span></label>
+        <input type="radio" name="field3" />여
+        <input type="radio" name="field3" />남
+    </li>
+    <li>
+        <label>Email <span class="required">*</span></label>
+        <input type="email" name="field3" class="field-long" />
+    </li>
     <li>
         <label>Email <span class="required">*</span></label>
         <input type="email" name="field3" class="field-long" />
@@ -115,6 +139,6 @@ select{
     </li>
 </ul>
 </form>
-
+</div>
 </body>
 </html>

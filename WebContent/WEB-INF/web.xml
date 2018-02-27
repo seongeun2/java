@@ -1,22 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>jsp2Pro</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
-  	<context-param>
-  		<description>로깅 여부</description>
-  		<param-name>longEnabled</param-name>
-  		<param-value>true</param-value>
-  	</context-param>
-  	<context-param>
-  		<description>디버깅 레벨</description>
-  		<param-name>debugLevel</param-name>
-  		<param-value>5</param-value>
-  	</context-param>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <servlet>
+    <servlet-name>SimpleController</servlet-name>
+    <servlet-class>mvc.simple.SimpleController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SimpleController</servlet-name>
+    <url-pattern>/simple</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+  	<servlet-name>ControllerUsingFile</servlet-name>
+  	<servlet-class>mvc.controller.ControllerUsingFile</servlet-class><init-param>
+  	<param-name>configFile</param-name>
+  	<param-value>/WEB-INF/commandHandler.properties</param-value></init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControllerUsingFile</servlet-name>
+  	<url-pattern>/controllerUsingFile</url-pattern>
+  </servlet-mapping>
+
+
+
+  <servlet>
+  	<servlet-name>ControllerUsingURI</servlet-name>
+  	<servlet-class>mvc.controller.ControllerUsingURI</servlet-class><init-param>
+  	<param-name>configFile</param-name>
+  	<param-value>/WEB-INF/commandHandlerURI.properties</param-value></init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControllerUsingURI</servlet-name>
+  	<url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+
+
+	<servlet>
+  	<servlet-name>ControllerRest</servlet-name>
+  	<servlet-class>mvc.controller.ControllerRest</servlet-class><init-param>
+  	<param-name>configFile</param-name>
+  	<param-value>/WEB-INF/commandHandlerRest.properties</param-value></init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ControllerRest</servlet-name>
+  	<url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+	
+
+
 </web-app>
+
+
